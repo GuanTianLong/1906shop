@@ -14,5 +14,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+    echo date("Y-m-d H:i:s");
     return view('welcome');
+});
+
+//phpinfo
+Route::get('/phpinfo', function () {
+    phpinfo();
+});
+
+/**测试路由分组*/
+Route::prefix('/test')->group(function () {
+    //测试Redis(Redis设置值)
+    Route::get('/redis','TestController@testRedis');
+    //测试Redis(Redis取值)
+    Route::get('/redis1','TestController@testRedis1');
+
 });
