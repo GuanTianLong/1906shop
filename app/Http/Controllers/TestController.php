@@ -15,6 +15,7 @@ class TestController extends Controller
         $val = time();
         //set 一个键 并赋值
         Redis::set($key,$val);
+        echo "set成功";
     }
 
     /**
