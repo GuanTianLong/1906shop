@@ -37,4 +37,5 @@ class TestController extends Controller
         $data = DB::table('p_goods')->first();
         var_dump($data);
     }
+
 }

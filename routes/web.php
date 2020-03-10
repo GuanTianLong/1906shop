@@ -33,3 +33,7 @@ Route::prefix('/test')->group(function () {
     Route::get('/mysql','TestController@tsetMysql');
 
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
