@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;       //Redis
+use Illuminate\Support\Facades\DB;          //DB
 
 class TestController extends Controller
 {
@@ -19,7 +20,7 @@ class TestController extends Controller
     }
 
     /**
-     * 测试Redis(Redis取值)
+        * 测试Redis(Redis取值)
      */
     public function testRedis1(){
         $key = '1906shop';
@@ -28,4 +29,12 @@ class TestController extends Controller
         echo 'value:'.$value;
     }
 
+    /**
+        *测试MySQL
+     */
+    public function tsetMysql()
+    {
+        $data = DB::table('p_goods')->first();
+        var_dump($data);
+    }
 }

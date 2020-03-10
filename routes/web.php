@@ -29,5 +29,7 @@ Route::prefix('/test')->group(function () {
     Route::get('/redis','TestController@testRedis');
     //测试Redis(Redis取值)
     Route::get('/redis1','TestController@testRedis1');
+    //测试MySQL
+    Route::get('/mysql','TestController@tsetMysql');
 
 });
